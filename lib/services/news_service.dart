@@ -7,8 +7,8 @@ class NewsService {
   static const String _apiKey = '8ebdf26a2bcf421bad909881d8efc05e';
   static const String _baseUrl = 'https://newsapi.org/v2';
 
-  // Fetch top headlines based on country (can be expanded to include more filters)
-  Future<List<Article>> fetchTopHeadlines() async {
+  // Fetch top headlines
+ Future<List<Article>> fetchTopHeadlines() async {
     final response = await http.get(
       Uri.parse('$_baseUrl/top-headlines?country=us&apiKey=$_apiKey'),
     );
@@ -54,4 +54,6 @@ class NewsService {
       throw Exception('Failed to load news for category: $category');
     }
   }
+
+
 }
